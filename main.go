@@ -32,9 +32,9 @@ func main() {
 	// Handle events
 	go h.HandleEvents()
 
-	err = h.AddWatchedDir(cfg.InputDir)
+	err = h.AddWatchedDir(cfg.app.InputDir)
 	if err != nil {
-		log.Fatalf("error while monitoring: %s: %v", cfg.InputDir, err)
+		log.Fatalf("error while monitoring: %s: %v", cfg.app.InputDir, err)
 	}
 
 	<-done

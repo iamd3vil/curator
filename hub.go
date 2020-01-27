@@ -26,7 +26,7 @@ func (h *Hub) HandleEvents() {
 			}
 			if event.Op&fsnotify.Create == fsnotify.Create {
 				if isEbook(event.Name) {
-					err := convertFile(event.Name, cfg.OutputDir)
+					err := convertFile(event.Name, cfg.app.OutputDir)
 					if err != nil {
 						log.Printf("error while conversion:%s:%v", event.Name, err)
 					}

@@ -1,3 +1,11 @@
 [curator]
 input_dir = "/home/User/Books/"
 output_dir = "/home/User/MobiBooks/"
+emails = ["rajinikanth@kindle.com"]
+
+[mailer]
+server_addr = "smtp.gmail.com"
+server_port = 587
+smtp_username = "rajinikanth@gmail.com"
+smtp_password = "superdupersecret"
+from_addr = "rajinikanth@gmail.com"
