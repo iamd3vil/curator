@@ -1,0 +1,3 @@
+[curator]
+input_dir = "/home/User/Books/"
+output_dir = "/home/User/MobiBooks/"
