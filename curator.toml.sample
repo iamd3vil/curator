@@ -1,8 +1,16 @@
 [curator]
+# Directory to be monitored
 input_dir = "/home/User/Books/"
+
+# Directory where converted books will be placed
 output_dir = "/home/User/MobiBooks/"
+
+# Email with the converted book attached will be sent to these emails.
+# Can be used to sent automatically to Kindle.
+# Optional.
 emails = ["rajinikanth@kindle.com"]
 
+# Config for SMTP server. Optional.
 [mailer]
 server_addr = "smtp.gmail.com"
 server_port = 587
