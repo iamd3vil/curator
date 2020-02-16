@@ -14,7 +14,7 @@ import (
 var bookExt = []string{".pdf", ".epub"}
 
 // TODO: Convert file into mobi
-func convertFile(path, outputDir string) error {
+func convertFileToMobi(path, outputDir string) error {
 	log.Printf("Converting: %s in %s", path, outputDir)
 
 	var fileName string
@@ -48,9 +48,9 @@ func convertFile(path, outputDir string) error {
 	e.To = cfg.app.Emails
 	e.AttachFile(cPath)
 
-	server := fmt.Sprintf("%s:%d", cfg.mailer.ServerAddr, cfg.mailer.ServerPort)
+	srv := fmt.Sprintf("%s:%d", cfg.mailer.ServerAddr, cfg.mailer.ServerPort)
 
-	err = e.Send(server, smtp.PlainAuth("", cfg.mailer.SMTPUsername, cfg.mailer.SMTPPassword, cfg.mailer.ServerAddr))
+	err = e.Send(srv, smtp.PlainAuth("", cfg.mailer.SMTPUsername, cfg.mailer.SMTPPassword, cfg.mailer.ServerAddr))
 	if err != nil {
 		return fmt.Errorf("error while sending email: %v", err)
 	}

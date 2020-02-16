@@ -2,9 +2,19 @@ package main
 
 import "strings"
 
+var (
+	// EbookExtensions are the valid extensions which can be handled by Curator
+	EbookExtensions = []string{
+		".pdf",
+		".epub",
+	}
+)
+
 func isEbook(path string) bool {
-	if strings.HasSuffix(path, ".pdf") || strings.HasSuffix(path, ".epub") {
-		return true
+	for _, ext := range EbookExtensions {
+		if strings.HasSuffix(path, ext) {
+			return true
+		}
 	}
 
 	return false
